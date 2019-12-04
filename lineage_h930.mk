@@ -1,7 +1,7 @@
 $(call inherit-product, device/lge/h930/full_h930.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/rebellion/config/common_full_phone.mk)
 
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
@@ -14,7 +14,7 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Device identifiers
 
-PRODUCT_NAME := lineage_h930
+PRODUCT_NAME := rebellion_h930
 PRODUCT_BRAND := lge
 PRODUCT_MANUFACTURER := LGE
 PRODUCT_RELEASE_NAME := V30
@@ -30,3 +30,16 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 BUILD_FINGERPRINT="lge/joan_global_com/joan:9/PKQ1.190414.001/1918215284654:user/release-keys"
 
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST += ro.product.model ro.vendor.product.model
+
+# Maintainer
+
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.rebellion.maintainer=Jimbomodder🤔
+
+# Bootanimation Res
+
+TARGET_BOOT_ANIMATION_RES := 1080 
+
+# Gapps
+
+TARGET_GAPPS_ARCH := arm64
